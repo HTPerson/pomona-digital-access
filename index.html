@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pomona Digital Access Map</title>
+<meta name="description" content="Households without internet or a computer in Pomona, California, by census tract.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <div class="map-wrap">
+    <div class="map-ui">
+      <div class="seg" id="seg" role="group" aria-label="Choose what to show">
+        <span class="seg-lbl" id="seg-lbl">Households</span>
+        <button id="btn-internet" class="on" aria-pressed="true">without internet</button>
+        <button id="btn-computer" aria-pressed="false">without a computer</button>
+      </div>
+      <div class="legend" id="legend"></div>
+    </div>
+    <div id="map" role="region" aria-label="Map of Pomona census tracts"></div>
+  </div>
+  <aside class="panel" id="panel">
+    <div class="panel-top">
+      <div class="pick">
+        <label for="tract-pick" id="pick-lbl">Choose a census tract</label>
+        <select id="tract-pick"></select>
+      </div>
+      <div class="lang" role="group" aria-label="Language / Idioma">
+        <button data-lang="en" lang="en">English</button>
+        <button data-lang="es" lang="es">Español</button>
+      </div>
+    </div>
+    <div id="panel-body"></div>
+  </aside>
+</div>
+<div id="live" class="vh" role="status" aria-live="polite"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
